@@ -35,7 +35,11 @@ do
         echo -e "\nCreating $i dashboard"
         # set source type
         dashboard=$(sed -E 's/\$\{DS_PROMETHEUS\}/Prometheus/g' $1/$i)
-        cmd="echo \$dashboard | sed -E 's/\"notifications\": \[\]/\"notifications\": [{\"uid\":$notif_chan}]/g'"
+        if [ "$notif_chan" != null ]; then
+                cmd="echo \$dashboard | sed -E 's/\"notifications\": \[\]/\"notifications\": [{\"uid\":$notif_chan}]/g'"
+        else
+                cmd="echo \$dashboard"
+        fi
         dashboard=$(eval $cmd)
         # create dashboard
         curl -s -X POST --data \
