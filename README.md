@@ -64,7 +64,7 @@ tar xvf staking.tgz
 ### Update avalanche
 Update values in kube-avax/values.yaml
 ```
-./deploy-cli.sh update avalanche
+./deploy-cli.sh upgrade avalanche
 ```
 
 ### Update dashboards
