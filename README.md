@@ -29,9 +29,9 @@ Use gcloud web console to create cluster
 ```
 # Recommended k8s cluster:
 # 1-2 Nodes
-# Each node 1 CPU/4GB RAM
-# Disk size 200GB
-# approximate cost: $30/month for 1 node
+# Each node 2 CPU/8GB RAM
+# Disk size 100GB
+# approximate cost: $53/month for 1 node
 
 # get k8s cluster credentials
 gcloud container clusters get-credentials <cluster-name> --zone us-central1-c --project <project-name>
