@@ -6,7 +6,7 @@ image:
   pullPolicy: IfNotPresent
   # avalanchego tag from docker hub
   # https://hub.docker.com/r/avaplatform/avalanchego/tags?page=1&ordering=last_updated
-  tag: "v1.2.0"
+  tag: "v1.3.1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -15,7 +15,7 @@ fullnameOverride: ""
 avalancheNode:
   containerPort: 9651
   command: '["/avalanchego/build/avalanchego"]'
-  args: '["--dynamic-public-ip=opendns","--http-host=","--log-level=info"]'
+  args: '["--dynamic-public-ip=opendns","--http-host=","--log-level=info","--staking-tls-key-file=/root/staking-keys/staking/staker.key","--staking-tls-cert-file=/root/staking-keys/staking/staker.crt"]'
 
 # Persistent volume claim size
 storage: "250Gi"

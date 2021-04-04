@@ -47,7 +47,7 @@ spec:
               mountPath: /root/.avalanchego
             {{- if .Values.stakingKey }}
             - name: {{ .Values.stakingKey }}
-              mountPath: /root/.avalanchego/staking
+              mountPath: /root/staking-keys/staking
               readOnly: true
             {{- end }}
           # /ext/health endpoint returns success after
