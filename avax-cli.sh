@@ -81,7 +81,7 @@ case "$1" in
         case $2 in 
         get)
             ava_pod=$(kubectl get pods -n "$ava_namespace" | grep ava-node | awk '{print $1}')
-            kubectl exec -it "$ava_pod" -n "$ava_namespace" -- tar cfz /tmp/staking.tgz -C /root/.avalanchego staking
+            kubectl exec -it "$ava_pod" -n "$ava_namespace" -- tar cfz /tmp/staking.tgz -C /root/staking-keys staking
             kubectl cp "$ava_pod":/tmp/staking.tgz $3 -n "$ava_namespace"
             kubectl exec -it "$ava_pod" -n "$ava_namespace" -- rm /tmp/staking.tgz
         ;;
