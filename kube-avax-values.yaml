@@ -6,7 +6,7 @@ image:
   pullPolicy: IfNotPresent
   # avalanchego tag from docker hub
   # https://hub.docker.com/r/avaplatform/avalanchego/tags?page=1&ordering=last_updated
-  tag: "v1.3.1"
+  tag: "v1.4.7"
 
 imagePullSecrets: []
 nameOverride: ""
